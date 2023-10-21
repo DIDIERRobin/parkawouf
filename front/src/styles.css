@@ -1,3 +1,20 @@
+:root {
+  --color-main: #E5BA88;
+  --color-dark: #191202;
+  --color-light: #E4D8C6;
+
+  --color-light-green: #2C4716;
+  --color-dark-green: #567440;
+
+  --color-shadow: var(--color-light);
+  /*--shadow-title:1px 0 var(--color-shadow), -1px 0 var(--color-shadow), 0 1px var(--color-shadow), 0 -1px var(--color-shadow),*/
+  /*1px 1px var(--color-shadow), -1px -1px var(--color-shadow), 1px -1px var(--color-shadow), -1px 1px var(--color-shadow);*/
+
+  --size-gap: 16px;
+  --card-width: 250px;
+  --card-height: calc(var(--card-width) * 1.31415);
+}
+
 html {
   -webkit-text-size-adjust: 100%;
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,

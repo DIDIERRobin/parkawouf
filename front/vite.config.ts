@@ -5,7 +5,7 @@ import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 
 export default defineConfig({
   cacheDir: '../node_modules/.vite/front',
-
+  base: '/',
   server: {
     port: 4200,
     host: 'localhost',
