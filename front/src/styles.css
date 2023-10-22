@@ -1,5 +1,6 @@
 :root {
   --color-main: #E5BA88;
+  --color-accent: #47B1DE;
   --color-dark: #191202;
   --color-light: #E4D8C6;
 
@@ -7,19 +8,20 @@
   --color-dark-green: #567440;
 
   --color-shadow: var(--color-light);
-  /*--shadow-title:1px 0 var(--color-shadow), -1px 0 var(--color-shadow), 0 1px var(--color-shadow), 0 -1px var(--color-shadow),*/
-  /*1px 1px var(--color-shadow), -1px -1px var(--color-shadow), 1px -1px var(--color-shadow), -1px 1px var(--color-shadow);*/
+  /*--shadow-title:1px 1px 2px rgba(25, 18, 2, 0.5); !* color-dark in rgb *!*/
 
   --size-gap: 16px;
   --size-header: 50px;
   --size-page: calc(100vh - var(--size-header));
-  --card-width: 250px;
-  --card-height: calc(var(--card-width) * 1.31415);
+  --size-text-big: 3rem;
+  --size-card-width: 250px;
+  --size-card-height: calc(var(--size-card-width) * 1.31415);
 }
 
 @media only screen and (max-width: 600px) {
   :root {
-    --card-width: 150px; /* Smaller card width for small screens */
+    --size-card-width: 150px; /* Smaller card width for small screens */
+    --size-text-big: 2rem;
   }
 }
 
