@@ -1,16 +1,35 @@
 <script setup lang="ts">
 import DogComponent from "../components/DogComponent.vue";
-import { dogStore } from "../stores/dog.store";
+import { useDogStore, type iDogIsPresent } from "../stores/dog.store";
+import { onMounted, onUnmounted } from 'vue';
+import { useSocketStore } from "../stores/socket.store";
 
-const store = dogStore()
+const dogStore = useDogStore()
+const socketStore = useSocketStore()
 
+onMounted(() => {
+  dogStore.retrieveDogs();
+});
+
+onUnmounted(() => {
+  socketStore.socket.disconnect();
+});
+
+const updateDogPresence = (dog: iDogIsPresent) => {
+  socketStore.updateDogState(dog);
+  dog.isPresent = !dog.isPresent;
+};
 </script>
 
 <template>
   <h1>Parkawouf !</h1>
   <div class="dogs-container">
-    <div v-for="dog in store.dogs" :key="dog.id" class="dog-item">
+    <div v-for="dog in dogStore.dogs" :key="dog.id" class="dog-item" @click="updateDogPresence(dog)">
       <DogComponent :dog="dog" />
+      <div class="badge red" v-if="!dog.isPresent">
+      </div>
+      <div class="badge green" v-if="dog.isPresent">
+      </div>
     </div>
   </div>
 </template>
@@ -31,6 +50,21 @@ const store = dogStore()
   position: relative;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.badge {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: var(--size-gap);
+  right: var(--size-gap);
+}
+.green {
+  background: green;
+}
+.red {
+  background: red;
 }
 </style>
 

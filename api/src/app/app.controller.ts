@@ -1,6 +1,6 @@
-import { Controller, Get, Res } from '@nestjs/common';
+import { Controller, Get, Req, Res } from '@nestjs/common';
 import { join } from 'path';
-import { Response } from 'express';
+import { Response, Request } from 'express';
 
 @Controller()
 export class AppController {
@@ -8,8 +8,13 @@ export class AppController {
   }
 
   @Get()
-  catchAll(@Res() res: Response) {
-    res.sendFile(join(__dirname, '..', 'front', 'index.html'));
+  catchAll(@Req() req: Request, @Res() res: Response) {
+    if (req.path.startsWith('/socket.io')) {
+      return;
+    }
+    const basePath = process.env.NODE_ENV === 'production' ? 'dist' : '';
+    const pathToIndexHtml = join(__dirname, basePath, 'front', 'index.html');
+    res.sendFile(pathToIndexHtml);
   }
 
 }
