@@ -22,7 +22,6 @@ const updateDogPresence = (dog: iDogIsPresent) => {
 </script>
 
 <template>
-  <h1>Parkawouf !</h1>
   <div class="dogs-container">
     <div v-for="dog in dogStore.dogs" :key="dog.id" class="dog-item" @click="updateDogPresence(dog)">
       <DogComponent :dog="dog" />

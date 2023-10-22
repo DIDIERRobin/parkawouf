@@ -11,8 +11,16 @@
   /*1px 1px var(--color-shadow), -1px -1px var(--color-shadow), 1px -1px var(--color-shadow), -1px 1px var(--color-shadow);*/
 
   --size-gap: 16px;
+  --size-header: 50px;
+  --size-page: calc(100vh - var(--size-header));
   --card-width: 250px;
   --card-height: calc(var(--card-width) * 1.31415);
+}
+
+@media only screen and (max-width: 600px) {
+  :root {
+    --card-width: 150px; /* Smaller card width for small screens */
+  }
 }
 
 html {
