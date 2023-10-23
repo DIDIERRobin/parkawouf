@@ -55,4 +55,24 @@ export const dogs = [
     "id": 14,
     "name": "Meeko"
   },
+  {
+    "id": 15,
+    "name": "Dalton"
+  },
+  {
+    "id": 16,
+    "name": "Drogo"
+  },
+  {
+    "id": 17,
+    "name": "Ops"
+  },
+  {
+    "id": 18,
+    "name": "Ukiyo"
+  },
+  {
+    "id": 19,
+    "name": "Ulk"
+  },
 ]
