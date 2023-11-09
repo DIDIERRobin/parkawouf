@@ -1,4 +1,4 @@
-/// <reference types='vitest' />
+/// <reference shared='vitest' />
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
