@@ -1,3 +1,4 @@
+import 'package:app/main-theme.dart';
 import 'package:flutter/material.dart';
 import 'package:app/widgets/nav-bar.widget.dart';
 import 'package:app/screens/today.screen.dart';
@@ -26,6 +27,7 @@ class _ParkaWoufState extends State<ParkaWouf> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Parkawouf',
+      theme: ParkaWoufTheme(),
       home: Scaffold(
         appBar: AppBar(
           title: Text('ParkaWouf'),
