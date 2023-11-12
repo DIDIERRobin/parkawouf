@@ -6,15 +6,15 @@ import 'package:app/screens/live.screen.dart';
 import 'package:app/screens/all-dogs.screen.dart';
 
 void main() {
-  runApp(ParkaWouf());
+  runApp(Parkawouf());
 }
 
-class ParkaWouf extends StatefulWidget {
+class Parkawouf extends StatefulWidget {
   @override
-  _ParkaWoufState createState() => _ParkaWoufState();
+  _ParkawoufState createState() => _ParkawoufState();
 }
 
-class _ParkaWoufState extends State<ParkaWouf> {
+class _ParkawoufState extends State<Parkawouf> {
   int _selectedIndex = 0;
 
   final List<Widget> _screens = [
@@ -27,10 +27,10 @@ class _ParkaWoufState extends State<ParkaWouf> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Parkawouf',
-      theme: ParkaWoufTheme(),
+      theme: ParkawoufTheme(),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('ParkaWouf'),
+          title: Text('Parkawouf'),
         ),
         body: _screens[_selectedIndex],
         bottomNavigationBar: NavBar(
