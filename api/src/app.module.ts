@@ -4,6 +4,7 @@ import { MyConfigService } from "./modules/my-config/my-config.service";
 import { MongooseModule } from "@nestjs/mongoose";
 import { LoggerModule } from "./modules/logger/logger.module";
 import { DogModule } from "./modules/dog/dog.module";
+import { PictureModule } from "./modules/picture/picture.module";
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { DogModule } from "./modules/dog/dog.module";
     }),
 
     // feature modules
+    PictureModule,
     DogModule,
   ],
   controllers: [],

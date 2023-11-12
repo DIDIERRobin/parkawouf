@@ -1,21 +1,18 @@
 import { Prop } from "@nestjs/mongoose";
+import { v4 } from "uuid";
 
+export const baseEntitySchemaOptions = {
+  timestamps: true,
+  _id: false,
+  versionKey: false,
+};
 export class BaseEntitySchema {
   @Prop({
     required: true,
-    unique: true,
+    default: v4,
   })
-  id: string;
+  _id: string;
 
-  @Prop({
-    type: Date,
-    required: true,
-  })
   createdAt: Date;
-
-  @Prop({
-    type: Date,
-    required: true,
-  })
   updatedAt: Date;
 }
