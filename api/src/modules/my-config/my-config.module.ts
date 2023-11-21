@@ -4,16 +4,20 @@ import mongodbConfig, { validateMongodbConfig } from "./configs/mongodb.config";
 import * as joi from "joi";
 import { MyConfigService } from "./my-config.service";
 import { ConfigModule } from "@nestjs/config";
+import logConfig, { validateLogConfig } from "./configs/log.config";
+import s3Config, { validateS3Config } from "./configs/s3.config";
 
 @Global()
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      load: [generalConfig, mongodbConfig],
+      load: [generalConfig, mongodbConfig, logConfig, s3Config],
       validationSchema: joi.object({
         ...validateGeneralConfig,
         ...validateMongodbConfig,
+        ...validateLogConfig,
+        ...validateS3Config,
       }),
     }),
   ],
