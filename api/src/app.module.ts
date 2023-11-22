@@ -5,6 +5,8 @@ import { MongooseModule } from "@nestjs/mongoose";
 import { LoggerModule } from "./modules/logger/logger.module";
 import { DogModule } from "./modules/dog/dog.module";
 import { PictureModule } from "./modules/picture/picture.module";
+import { AuthModule } from "./modules/auth/auth.module";
+import { UserModule } from "./modules/user/user.module";
 
 @Module({
   imports: [
@@ -21,6 +23,8 @@ import { PictureModule } from "./modules/picture/picture.module";
     // feature modules
     PictureModule,
     DogModule,
+    AuthModule,
+    UserModule,
   ],
   controllers: [],
   providers: [],

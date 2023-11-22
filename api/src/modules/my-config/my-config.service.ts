@@ -10,6 +10,7 @@ import {
 } from "./configs/general.config";
 import { iLogConfig, LOG_CONFIG_NAMESPACE } from "./configs/log.config";
 import { iS3Config, S3_CONFIG_NAMESPACE } from "./configs/s3.config";
+import { iJwtConfig, JWT_CONFIG_NAMESPACE } from "./configs/jwt.config";
 
 @Injectable()
 export class MyConfigService {
@@ -27,6 +28,10 @@ export class MyConfigService {
 
   get s3(): iS3Config {
     return this.conf.get(S3_CONFIG_NAMESPACE);
+  }
+
+  get jwt(): iJwtConfig {
+    return this.conf.get(JWT_CONFIG_NAMESPACE);
   }
 
   constructor(private conf: ConfigService) {}
